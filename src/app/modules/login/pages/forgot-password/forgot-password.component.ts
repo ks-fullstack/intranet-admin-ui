@@ -14,8 +14,8 @@ import { RouterLink } from '@angular/router';
 export class ForgotPasswordComponent {
 
   forgotPasswordForm = new FormGroup({
-    email: new FormControl('', Validators.required),
-    otp: new FormControl('', Validators.required),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    otp: new FormControl('', [Validators.required]),
   });
 
   constructor() { }
@@ -26,5 +26,4 @@ export class ForgotPasswordComponent {
   submit(): void {
     console.log(this.forgotPasswordForm.value);
   }
-
 }
