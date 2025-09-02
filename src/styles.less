@@ -1,0 +1,66 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: 13px;
+}
+
+.bg-light-primary {
+    background-color: #ecf2ff !important;
+}
+
+//#region Font Size
+// Mixin for font size
+.intranet-fs(@size) {
+    font-size: @size !important;
+}
+
+// Generate classes from 12px to 24px
+.loop-font-sizes(@i) when (@i <= 24) {
+    .intranet-fs-@{i} {
+        .intranet-fs(~"@{i}px");
+    }
+
+    .loop-font-sizes(@i + 1);
+}
+
+.loop-font-sizes(12);
+//#endregion
+
+//#region Font weight
+// Mixin for font weight
+.intranet-fw(@weight) {
+    font-weight: @weight !important;
+}
+
+// Generate classes for font weight
+.loop-font-weights(@i) when (@i <=900) {
+    .intranet-fw-@{i} {
+        .intranet-fw(@i);
+    }
+
+    .loop-font-weights(@i + 100);
+}
+
+.loop-font-weights(100);
+//#endregion
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    background-color: transparent !important;
+}
+
+.mat-mdc-form-field-focus-overlay {
+    background-color: transparent !important;
+}
+
+.mdc-text-field {
+    padding: 0px !important;
+}
+
+.mat-mdc-form-field-error-wrapper {
+    padding: 0px !important;
+}
