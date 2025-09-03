@@ -7,12 +7,12 @@ import { Router, RouterLink } from '@angular/router';
 import { NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-sign-up',
+  selector: 'app-sign-in',
   imports: [ FormsModule, ReactiveFormsModule, MatButtonModule, MatCardModule, MatInputModule, RouterLink, NgIf ],
-  templateUrl: './sign-up.component.html',
-  styleUrl: './sign-up.component.less'
+  templateUrl: './sign-in.component.html',
+  styleUrl: './sign-in.component.less'
 })
-export class SignUpComponent implements OnInit, OnDestroy {
+export class SignInComponent implements OnInit, OnDestroy {
 
   //#region Variables declaration
   error: string = '';
