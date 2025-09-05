@@ -4,11 +4,11 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
-import { NgIf } from '@angular/common';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-sign-in',
-  imports: [ FormsModule, ReactiveFormsModule, MatButtonModule, MatCardModule, MatInputModule, RouterLink, NgIf ],
+  imports: [ FormsModule, ReactiveFormsModule, MatButtonModule, MatCardModule, MatInputModule, RouterLink, CommonModule ],
   templateUrl: './sign-in.component.html',
   styleUrl: './sign-in.component.less'
 })

@@ -1,8 +1,8 @@
 <div class="intranet-blank-layout-container bg-light-primary">
   <div class="col-lg-4 d-flex align-items-center">
-    <mat-card class="row p-4 intranet-card-shadow">
+    <mat-card class="p-4 intranet-card-shadow">
       <form [formGroup]="signUpForm" (ngSubmit)="submit()">
-        <div class="row mt-4">
+        <div class="mt-4">
             <img src="intranet-logo-150px.png" alt="Intranet Logo" class="intranet-login-logo"/>
         </div>
         <mat-card-title class="mb-4">Log in to Intranet Admin</mat-card-title>
@@ -41,7 +41,7 @@
           </div>
           <div class="py-3 w-100 text-center intranet-fs-14">
             <span>Don't have an account yet?&nbsp;</span>
-            <a routerLink="/intranet/register" class="text-primary text-decoration-none intranet-fw-500 pe-auto">Sign Up</a>
+            <a routerLink="/intranet/sign-up" class="text-primary text-decoration-none intranet-fw-500 pe-auto">Sign Up</a>
           </div>
         </mat-card-actions>
       </form>
