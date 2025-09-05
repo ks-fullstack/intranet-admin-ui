@@ -1,0 +1,110 @@
+<div class="d-flex intranet-blank-layout-container bg-light-primary">
+  <mat-card class="p-4 intranet-card-shadow intranet-sign-up-card" >
+    <form [formGroup]="signUpForm" (ngSubmit)="submit()">
+      <mat-card-title class="mt-2 mb-4 text-center">Create An Account</mat-card-title>
+      <mat-card-content>
+        <div class="row mb-3">
+          <div class="col-md-6 mb-3 mb-md-0">
+            <mat-form-field class="w-100">
+              <mat-label>First Name</mat-label>
+              <input matInput type="text" placeholder="First Name" formControlName="firstName" />
+              <mat-error *ngIf="signUpForm.get('firstName')?.hasError('required')">
+                First Name is required.
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <mat-form-field class="w-100">
+              <mat-label>Last Name</mat-label>
+              <input matInput placeholder="Last Name" formControlName="lastName">
+              <mat-error *ngIf="signUpForm.get('lastName')?.hasError('required')">
+                Last Name is required.
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-md-6 mb-3 mb-md-0">
+            <mat-form-field class="w-100">
+              <mat-label>Date of Birth</mat-label>
+              <input matInput [matDatepicker]="picker" placeholder="Date of Birth" formControlName="dob" />
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+              <mat-error *ngIf="signUpForm.get('dob')?.hasError('required')">
+                Date of Birth is required.
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 d-flex align-items-center">
+            <label>Gender</label>
+            <mat-radio-group formControlName="gender">
+              <mat-radio-button value="female">Female</mat-radio-button>
+              <mat-radio-button value="male">Male</mat-radio-button>
+            </mat-radio-group>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-md-6 mb-3 mb-md-0">
+            <mat-form-field class="w-100">
+              <mat-label>Email ID</mat-label>
+              <input matInput type="email" placeholder="Email ID" formControlName="emailId" />
+              <mat-error *ngIf="signUpForm.get('emailId')?.hasError('required')">
+                Email ID is required.
+              </mat-error>
+              <mat-error *ngIf="signUpForm.get('emailId')?.hasError('email')">
+                Please enter a valid email address.
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <mat-form-field class="w-100">
+              <mat-label>Mobile No.</mat-label>
+              <input matInput type="tel" placeholder="Mobile No." formControlName="mobileNo" />
+              <mat-error *ngIf="signUpForm.get('mobileNo')?.hasError('required')">
+                Mobile No. is required.
+              </mat-error>
+              <mat-error *ngIf="signUpForm.get('mobileNo')?.hasError('pattern')">
+                Please enter a valid mobile number.
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-md-6 mb-3 mb-md-0">
+            <mat-form-field class="w-100">
+              <mat-label>Password</mat-label>
+              <input matInput type="password" placeholder="Password" formControlName="password" />
+              <mat-error *ngIf="signUpForm.get('password')?.hasError('required')">
+                Password is required.
+              </mat-error>
+              <mat-error *ngIf="signUpForm.get('password')?.hasError('minlength')">
+                Password must be at least 8 characters long.
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <mat-form-field class="w-100">
+              <mat-label>Confirm Password</mat-label>
+              <input matInput type="password" placeholder="Confirm Password" formControlName="confirmPassword" />
+              <mat-error *ngIf="signUpForm.get('confirmPassword')?.hasError('required')">
+                Confirm Password is required.
+              </mat-error>
+              <mat-error *ngIf="signUpForm.get('confirmPassword')?.value !== signUpForm.get('password')?.value">
+                Passwords do not match.
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+      </mat-card-content>
+      <mat-card-actions class="d-block px-3 py-0 mb-4">
+        <div class="py-3 w-100">
+          <button class="btn btn-primary w-100" type="submit">Sign Up</button>
+        </div>
+        <div class="py-3 w-100 text-center intranet-fs-14">
+          <span>Already have an account?&nbsp;</span>
+          <a routerLink="/intranet/login" class="text-primary text-decoration-none intranet-fw-500 pe-auto">Sign In</a>
+        </div>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</div>
