@@ -22,7 +22,7 @@ export class SignUpComponent {
     emailId: new FormControl('', [Validators.required, Validators.email]),
     mobileNo: new FormControl('', [Validators.required]),
     dob: new FormControl('', [Validators.required]),
-    gender: new FormControl('', [Validators.required]),
+    gender: new FormControl('male', [Validators.required]),
     password: new FormControl('', [Validators.required, Validators.minLength(8)]),
     confirmPassword: new FormControl('', [Validators.required])
   });
